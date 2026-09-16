@@ -365,6 +365,31 @@
       "summary_en": "Public renderer of canonical ecosystem metadata and benchmark evidence.",
       "summary_zh": "规范生态元数据与评测证据的公开展示层。",
       "evidence_level": "descriptor_only"
+    },
+    {
+      "id": "traceloom",
+      "name": "TraceLoom",
+      "artifact_type": "runtime_component",
+      "system_role": "profiling_analysis",
+      "integration_contracts": [],
+      "integration_surfaces": [
+        "vLLM --scheduler-cls / Scheduler and AsyncScheduler",
+        "Optional explicit SchedulerOutput transport and worker profiler-marker patch",
+        "Native offline profiler SQLite and scheduler JSONL analysis"
+      ],
+      "execution_planes": [
+        "scheduler",
+        "worker",
+        "offline"
+      ],
+      "deployment_topology": "mixed",
+      "delivery_model": "python_distribution",
+      "ownership": "hust_owned_subsystem",
+      "maturity": "experimental",
+      "canonical_repository": "https://github.com/vLLM-HUST/vllm-hust-perf-analyzer",
+      "summary_en": "Standalone timeline analysis and an opt-in vLLM runtime plugin. Organize profiler events into reusable structures, join supplied scheduler steps, and query or visualize the captured execution.",
+      "summary_zh": "独立时间线分析工具与可选的 vLLM 运行时插件。将 profiler 事件组织成可复用结构，关联采集到的 scheduler step，以查询和可视化理解推理执行。",
+      "evidence_level": "hardware_verified"
     }
   ]
 }
